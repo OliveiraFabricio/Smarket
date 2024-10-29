@@ -200,7 +200,6 @@ import { createFrame } from "./src/modules/ui/createFrame/index.js";
   for (let i = 0; i < 4; i++) {
   
     const newProduct = await createProduct();
-    console.log('kkk', newProduct);
     products.appendChild(newProduct);
     
   }
@@ -284,6 +283,7 @@ const button = document.createElement ('button');
 
 divBtn.appendChild(button);
 
+button.id = 'btn-fechar-pedido';
 button.innerText = 'Fechar pedido';
 await setFontSize(() => button, () => '1.2em');
 await setHeight(() => button, () => '58px');
@@ -292,4 +292,7 @@ await setPadding(() =>button, () => '10px 30px');
 await setBackgroundColor(() => button, () => '#D24543');
 await setColor(() => button, () => '#fff');
 await setBorderRadius(() => button, () => '15px');
+button.onclick = function(){
+  window.location = "src/pages/scan/index.html";
+};
 // FIM div finalizar pagamento
