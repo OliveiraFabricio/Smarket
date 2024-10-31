@@ -15,6 +15,65 @@ import { setFontWeight } from "../../modules/ui/setFontWeight/index.js";
 import { setFontSize } from "../../modules/ui/setFontSize/index.js";
 import { setBottom } from "../../modules/ui/setBottom/index.js";
 
+// Container dos  botões da parte superior
+const getIconContainer = await createFrame();   
+const iconContainer = getIconContainer();
+
+document.body.appendChild(iconContainer);
+
+await setDisplay(() => iconContainer, () => 'flex');
+await setPosition(() => iconContainer, () => 'fixed');
+await setWidth(() => iconContainer, () => '350px');
+await setHeight(() => iconContainer, () => '50px');
+await setMarginTop(() =>  iconContainer, () => '-115px');
+await setMarginLeft(() => iconContainer, () => '30px');
+await setBorderRadius(() => iconContainer, () => '5px');
+
+// icon back
+const getDivIconBack = await createFrame()
+const divIconBack = getDivIconBack();
+
+iconContainer.appendChild(divIconBack);
+
+await setWidth(() => divIconBack, () => '40px');
+await setHeight(() => divIconBack, () => '40px');
+await setMarginLeft(() => divIconBack, () => '2.5px');
+await setMarginTop(() => divIconBack, () => '2.5px');
+await setBackgroundColor(() => divIconBack, () => '#D24543');
+await setBorderRadius(() => divIconBack, () => '7px');
+
+const iconBack = document.createElement('img');
+
+divIconBack.appendChild(iconBack);
+
+iconBack.src = './icons/icon-back.svg';
+
+await setMarginLeft(() => iconBack, () => '9px');
+await setMarginTop(() => iconBack, () => '10px');
+
+// icon da lanterna
+const getDivIconFlash = await createFrame()
+const divIconFlash = getDivIconFlash();
+
+iconContainer.appendChild(divIconFlash);
+
+await setWidth(() => divIconFlash, () => '40px');
+await setHeight(() => divIconFlash, () => '40px');
+await setMarginLeft(() => divIconFlash, () => '265px');
+await setMarginTop(() => divIconFlash, () => '2.5px');
+await setBackgroundColor(() => divIconFlash, () => '#D24543');
+await setBorderRadius(() => divIconFlash, () => '7px');
+
+const iconFlash = document.createElement('img');
+
+divIconFlash.appendChild(iconFlash);
+
+iconFlash.src = './icons/icon-flash.svg';
+
+await setMarginLeft(() => iconFlash, () => '11px');
+await setMarginTop(() => iconFlash, () => '7px');
+
+
 // container do scanner
 const getDivScan = await createFrame();
 const divScan = getDivScan();
